@@ -1,0 +1,23 @@
+<div class="container">
+    <h5>Add Booking</h5>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="scheduleId">Schedule ID:</label>
+        <select id="scheduleId" name="scheduleId" [(ngModel)]="booking.scheduleId" required>
+          <option *ngFor="let schedule of schedules" [value]="schedule.id">{{ schedule.id }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="passengerId">Passenger ID:</label>
+        <select id="passengerId" name="passengerId" [(ngModel)]="booking.passengerId" required>
+          <option *ngFor="let passenger of passengers" [value]="passenger.id">{{ passenger.id }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="seatNumber">Seat Number:</label>
+        <input type="number" id="seatNumber" name="seatNumber" [(ngModel)]="booking.seatNumber" required>
+      </div>
+      <button type="submit">Add Booking</button>
+    </form>
+  </div>
+  

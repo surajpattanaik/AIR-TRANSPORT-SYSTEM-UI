@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header-div"><h5 class="heading">{{ message }}</h5></div>
+  <div *ngIf="bookings.length > 0; else noBookings">
+    <div class="airport-cards"> <!-- Use the class from airport component -->
+      <div *ngFor="let booking of bookings" class="airport-card"> <!-- Use the class from airport component -->
+        <div class="airport-details"> <!-- Use the class from airport component -->
+          <div class="airport-id">ID: {{ booking.id }}</div> <!-- Use the class from airport component -->
+          <div class="airport-name">Schedule Id: {{ booking.scheduleId }}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Passenger Id: {{ booking.passengerId }}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Seat Number: {{ booking.seatNumber }}</div> <!-- Use the class from airport component -->
+        </div>
+        <div class="airport-actions"> <!-- Use the class from airport component -->
+          <button *ngIf="isMod || isAdmin" (click)="updateBooking(booking.id)" mat-button color="accent">Update</button>
+          <button *ngIf="isMod || isAdmin" (click)="deleteBooking(booking.id)" mat-button color="warn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noBookings>
+    <p>No bookings available.</p>
+  </ng-template>
+</div>

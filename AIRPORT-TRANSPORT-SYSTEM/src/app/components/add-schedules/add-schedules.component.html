@@ -1,0 +1,33 @@
+<div class="container">
+    <h5>Add Schedule</h5>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="plane">Plane:</label>
+        <select id="plane" name="plane" [(ngModel)]="schedule.planeId" required>
+          <option *ngFor="let plane of planes" [value]="plane.id">{{ plane.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sourceAirport">Source Airport:</label>
+        <select id="sourceAirport" name="sourceAirport" [(ngModel)]="schedule.sourceAirportId" required>
+          <option *ngFor="let airport of airports" [value]="airport.id">{{ airport.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="destinationAirport">Destination Airport:</label>
+        <select id="destinationAirport" name="destinationAirport" [(ngModel)]="schedule.destinationAirportId" required>
+          <option *ngFor="let airport of airports" [value]="airport.id">{{ airport.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="departureTime">Departure Time:</label>
+        <input type="datetime-local" id="departureTime" name="departureTime" [(ngModel)]="schedule.departureTime" required>
+      </div>
+      <div class="form-group">
+        <label for="arrivalTime">Arrival Time:</label>
+        <input type="datetime-local" id="arrivalTime" name="arrivalTime" [(ngModel)]="schedule.arrivalTime" required>
+      </div>
+      <button type="submit">Add Schedule</button>
+    </form>
+  </div>
+  

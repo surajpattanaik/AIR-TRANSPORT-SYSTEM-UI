@@ -1,0 +1,15 @@
+<div class="container">
+    <h5>Add Airport</h5>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="airport.name" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" [(ngModel)]="airport.location" required>
+      </div>
+      <button type="submit">Add Airport</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,169 @@
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: montserrat;
+}
+nav {
+	background: #1dcebf;
+	height: 80px;
+	width: 100%;
+	position: relative;
+}
+label.logo {
+	color: rgb(34, 48, 42);
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+}
+nav ul {
+	float: right;
+	margin-right: 20px;
+}
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+nav ul li a {
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+nav ul li {
+    position: relative; /* Make the parent li element a positioned container */
+}
+nav ul li:hover a {
+    background-color: #16707c;
+}
+
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    background-color: #1dcebf;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+nav ul li:hover .submenu {
+    display: block;
+}
+nav ul li .submenu a {
+    display: block;
+    color: white;
+    transition: background-color 0.3s ease;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 80px;
+	
+}
+
+nav ul li .submenu a:hover {
+    background-color: #0b3c42;
+}
+
+a.active, a:hover {
+	background: #16707c;
+	transition: .5s;
+}
+.checkbtn {
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check {
+	display: none;
+}
+
+@media (max-width: 952px){
+	label.logo{
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	nav ul li a{
+		font-size: 16px;
+	}
+}
+@media (max-width: 858px){
+	.checkbtn {
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #1d075f;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a {
+		font-size: 20px;
+	}
+	a:hover, a.active {
+		background: none;
+		color: #16707c;
+	}
+	#check:checked ~ ul {
+		left: 0;
+	}
+}
+
+.smartlogo{
+    color: #1dcebf;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+.logoimg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px; /* Adjust the left position as needed */
+    width: 60px; /* Set the desired width */
+    height: 42px; /* Maintain aspect ratio */
+	position: absolute;
+	left: 20px;
+}
+
+label.logo {
+    font-size: 35px;
+    line-height: 80px;
+    padding: 50 100px; /* Adjust padding to accommodate the logo image */
+    font-weight: bold;
+    position: relative; /* Add relative positioning to the label */
+    background-color: aliceblue;
+}
+.logoimg2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 60px;
+    height: 42px;
+	position: absolute;
+	left: 310px;
+	top: -0.5px;
+	transform: scaleX(-1);
+}

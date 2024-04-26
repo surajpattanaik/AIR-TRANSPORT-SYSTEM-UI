@@ -1,0 +1,47 @@
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">
+        <img class="logoimg" src="../../../assets/logo2.jpg" alt="logo">
+      <a class="smartlogo" routerLink="airports/view">Udanchhoo   
+      </a> <img class="logoimg2" src="../../../assets/logo2.jpg" alt="logo">
+    </label>
+    <ul>
+        <li><a routerLink="airports">Airports</a>
+            <div class="submenu">
+                <a routerLink="airports/view">View Airports</a>
+                <a *ngIf="isAdmin" routerLink="airports/add">Add Airport</a>
+            </div>
+        </li>
+        <li><a routerLink="planes">Planes</a>
+            <div class="submenu">
+                <a routerLink="planes/view">View Planes</a>
+                <a *ngIf="isAdmin" routerLink="planes/add">Add Plane</a>
+            </div>
+        </li>
+        <li><a routerLink="passengers">Passengers</a>
+            <div class="submenu">
+                <a routerLink="passengers/view">View Passengers</a>
+                <a *ngIf="isAdmin" routerLink="passengers/add">Add Passengers</a>
+            </div>
+        </li>
+        <li><a routerLink="schedules">Schedules</a>
+            <div class="submenu">
+                <a routerLink="schedules/view">View Schedules</a>
+                <a *ngIf="isAdmin" routerLink="schedules/add">Add Schedule</a>
+            </div>
+        </li>
+        <li><a routerLink="bookings">Bookings</a>
+            <div class="submenu">
+                <a routerLink="bookings/view">View Bookings</a>
+                <a *ngIf="isAdmin" routerLink="bookings/add">Add Bokking</a>
+            </div>
+        </li>
+        <li><a (click)="logout()">Logout</a>
+        </li>
+
+    </ul>
+</nav>
+

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header-div"><h5 class="heading">{{ message }}</h5></div>
+  <div *ngIf="schedules.length > 0; else noSchedules">
+    <div class="airport-cards"> <!-- Use the class from airport component -->
+      <div *ngFor="let schedule of schedules" class="airport-card"> <!-- Use the class from airport component -->
+        <div class="airport-details"> <!-- Use the class from airport component -->
+          <div class="airport-id">ID: {{ schedule.id }}</div> <!-- Use the class from airport component -->
+          <div class="airport-name">Plane: {{ schedule.planeId }}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Source Airport Id: {{ schedule.sourceAirportId }}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Destination Airport Id: {{ schedule.destinationAirportId }}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Departure Time: {{ schedule.departureTime | date: 'dd MMMM yyyy'}}</div> <!-- Use the class from airport component -->
+          <div class="airport-location">Arrival Time: {{ schedule.arrivalTime | date: 'dd MMMM yyyy'}}</div> <!-- Use the class from airport component -->
+        </div>
+        <div class="airport-actions"> <!-- Use the class from airport component -->
+          <button *ngIf="isMod || isAdmin" (click)="updateSchedule(schedule.id)" mat-button color="accent">Update</button>
+          <button *ngIf="isMod || isAdmin" (click)="deleteSchedule(schedule.id)" mat-button color="warn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noSchedules>
+    <p>No Schedules available.</p>
+  </ng-template>
+</div>

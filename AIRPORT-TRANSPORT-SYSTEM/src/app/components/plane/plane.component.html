@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header-div"><h5 class="heading">Planes</h5></div>
+    <div class="airport-cards"> <!-- Use the class from airport component -->
+        <div *ngFor="let plane of planes" class="airport-card"> <!-- Use the class from airport component -->
+            <div class="airport-details"> <!-- Use the class from airport component -->
+                <div class="airport-id">ID: {{ plane.id }}</div> <!-- Use the class from airport component -->
+                <div class="airport-name">Name: {{ plane.name | uppercase }}</div> <!-- Use the class from airport component -->
+                <div class="airport-location">Capacity: {{ plane.capacity }}</div> <!-- Use the class from airport component -->
+            </div>
+            <div class="airport-actions"> <!-- Use the class from airport component -->
+                <button *ngIf="isMod || isAdmin" (click)="updatePlane(plane.id)" mat-button color="accent">Update</button>
+                <button *ngIf="isMod || isAdmin" (click)="deletePlane(plane)" mat-button color="warn">Delete</button>
+                <button style="border-style: hidden;" [matMenuTriggerFor]="menu">
+                    <mat-icon style="position: relative;top: 5px;">more_vert</mat-icon>
+                </button>
+                 <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="showSchedules(plane)">Show Schedules</button>
+                    <button mat-menu-item (click)="showBookings(plane)">Show Bookings</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</div>
